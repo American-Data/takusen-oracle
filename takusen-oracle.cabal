@@ -64,7 +64,18 @@ Executable takusen_tests
                 , old-time
                 , QuickCheck    ==2.*
                 , random
-  Other-Extensions: CPP DeriveDataTypeable ScopedTypeVariables
+  Other-Extensions: CPP
+                    DeriveDataTypeable
+                    FlexibleContexts
+                    FlexibleInstances
+                    ForeignFunctionInterface
+                    FunctionalDependencies
+                    GeneralizedNewtypeDeriving
+                    MultiParamTypeClasses
+                    RankNTypes
+                    ScopedTypeVariables
+                    TypeSynonymInstances
+                    UndecidableInstances
 
 Executable miniunit_tests
   Default-Language: Haskell2010
@@ -77,7 +88,7 @@ Executable miniunit_tests
     , Test.MiniUnitTest
   Build-Depends:  base          >= 4.5   && < 5
                 , mtl
-  Other-Extensions: CPP DeriveDataTypeable ScopedTypeVariables
+  Other-Extensions: CPP NoMonomorphismRestriction ScopedTypeVariables
 
 Library
   Default-Language: Haskell2010
@@ -100,6 +111,17 @@ Library
                 , mtl
                 , time
                 , old-time
-  Other-Extensions: CPP DeriveDataTypeable
+  Other-Extensions: CPP
+                    DeriveDataTypeable
+                    FlexibleContexts
+                    FlexibleInstances
+                    FunctionalDependencies
+                    ForeignFunctionInterface
+                    GeneralizedNewtypeDeriving
+                    MultiParamTypeClasses
+                    RankNTypes
+                    ScopedTypeVariables
+                    TypeSynonymInstances
+                    UndecidableInstances
   Other-modules:
         Database.InternalEnumerator
