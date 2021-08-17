@@ -3,4 +3,5 @@ dist/
 *.o
 .cabal-sandbox/
 .stack-work/
+stack.yaml.lock
 *.buildinfo
