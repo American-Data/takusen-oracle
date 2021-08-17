@@ -39,9 +39,12 @@ test__runSingleTestSuccess =
   runSingleTest (return ())
   >>= reportResult "test__runSingleTestSuccess"
 
-test__runSingleTestFailure =
-  runSingleTest (assertFailure "test__runSingleTestFailure")
-  >>= reportResult "test__runSingleTestFailure"
+test__runSingleTestFailure = do
+  result <- runSingleTest (assertFailure "test__runSingleTestFailure")
+  case result of
+    TestSuccess -> print_ "test__runSingleTestFailure failed"
+    TestFailure _ -> print_ "test__runSingleTestFailure OK"
+    TestException _ -> print_ "test__runSingleTestFailure failed!"
 
 test__runSingleTestException = do
   result <- runSingleTest (throwUserError "boo")
