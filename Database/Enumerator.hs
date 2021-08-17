@@ -302,9 +302,7 @@ withContinuedSession (IE.ConnectA connecta) m =
 
 
 
-beginTransaction ::
-  (MonadReader s (ReaderT s IO), IE.ISession s) =>
-  IE.IsolationLevel -> DBM mark s ()
+beginTransaction :: IE.ISession s => IE.IsolationLevel -> DBM mark s ()
 beginTransaction il = DBM (ask >>= \s -> lift $ IE.beginTransaction s il)
 commit :: IE.ISession s => DBM mark s ()
 commit = DBM( ask >>= lift . IE.commit )
