@@ -38,7 +38,6 @@
 
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
-{-# LANGUAGE OverlappingInstances #-}
 {-# LANGUAGE UndecidableInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE RankNTypes #-}
@@ -440,7 +439,7 @@ class MonadIO m => QueryIteratee m q i seed b |
 -- i.e. where the iteratee function has one argument left.
 -- The argument is applied, and the result returned.
 
-instance (IE.DBType a q b, MonadIO m) =>
+instance {-# OVERLAPPING #-} (IE.DBType a q b, MonadIO m) =>
   QueryIteratee m q (a -> seed -> m (IterResult seed)) seed b where
   iterApply q [buf] seed fn  = do
     v <- liftIO $ IE.fetchCol q buf

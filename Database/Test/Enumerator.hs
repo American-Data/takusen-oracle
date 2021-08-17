@@ -21,7 +21,7 @@ functions and types. See the various backend-specific test modules for examples.
 -}
 
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE OverlappingInstances, ScopedTypeVariables #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 
 module Database.Test.Enumerator where
 

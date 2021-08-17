@@ -10,7 +10,6 @@ Performance tests. Currently just tests large result sets.
 -}
 
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE OverlappingInstances #-}
 
 module Database.Test.Performance where
 
